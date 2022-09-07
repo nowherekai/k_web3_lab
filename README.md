@@ -6,7 +6,7 @@
 * [ERC20](./ERC20)
 * [ERC721](./ERC721)
 * [Voting system](./SimpleVoting)
-* Staking
+* [Staking](./staking-app)
 * time lock
 
 ## 高阶应用
