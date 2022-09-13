@@ -1,0 +1,11 @@
+<div data-controller="users" >
+  <%= form_with model: User.new, url: signup_path, data: { "users-target": "form" } do |form| %>
+    <%= form.label :username, "Name" %>
+    <%= form.text_field :username, data: { "users-target": "username"}  %>
+    <br />
+
+    <%= form.label :eth_address, "Eth Address" %>
+    <%= form.text_field :eth_address, readonly: true, data: { "users-target": "ethAddress"}  %>
+  <% end %>
+  <button id="eth_connect" data-action="click->users#signup">Sign up with Ethereum</buttton>
+</div>

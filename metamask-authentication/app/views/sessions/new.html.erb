@@ -1,0 +1,8 @@
+<div data-controller="sessions">
+  <%= form_with url: login_path, data: { "sessions-target": "form" } do |form| %>
+    <%= form.text_field :eth_address, data: { "sessions-target": "ethAddress" } %><br />
+    <%= form.text_field :eth_message, data: { "sessions-target": "ethMessage" } %><br />
+    <%= form.text_field :eth_signature, data: { "sessions-target": "ethSignature" } %><br />
+  <% end %>
+  <button data-action="click->sessions#login">Login</button>
+</div>

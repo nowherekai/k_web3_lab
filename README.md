@@ -7,9 +7,11 @@
 * [ERC721](./ERC721)
 * [Voting system](./SimpleVoting)
 * [Staking](./staking-app)
+* [ETH faucet](./faucet)
 * time lock
 
 ## 高阶应用
 * DAO
 https://github.com/buildspace/buildspace-dao-starter
 * NFT market place
+* [Login with metamask](./metamask-authentication)
