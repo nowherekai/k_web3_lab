@@ -1,0 +1,35 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+features:
+  - ipfsOnEthereumContracts
+dataSources:
+  - kind: ethereum
+    name: Web3RSVP
+    network: goerli
+    source:
+      address: "0xe81A386aD06Db30458fe6288B1c8Eb62D9973279"
+      abi: Web3RSVP
+      startBlock: 7627352
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Event
+        - Account
+        - RSVP
+        - Confirmation
+      abis:
+        - name: Web3RSVP
+          file: ./abis/Web3RSVP.json
+      eventHandlers:
+        - event: ConfirmedAttendee(uint256,address)
+          handler: handleConfirmedAttendee
+        - event: DepositsPaidOut(uint256)
+          handler: handleDepositsPaidOut
+        - event: NewEventCreated(uint256,address,uint256,uint256,uint256,string)
+          handler: handleNewEventCreated
+        - event: NewRSVP(uint256,address)
+          handler: handleNewRSVP
+      file: ./src/mapping.ts
